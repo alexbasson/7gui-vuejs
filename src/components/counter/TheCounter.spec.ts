@@ -1,5 +1,4 @@
 import { describe, it, beforeEach, expect } from 'vitest'
-
 import {DOMWrapper, mount, VueWrapper} from '@vue/test-utils'
 import TheCounter from './TheCounter.vue'
 

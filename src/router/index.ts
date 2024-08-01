@@ -21,7 +21,12 @@ const router = createRouter({
       path: '/counter',
       name: 'counter',
       component: () => import('../views/CounterView.vue')
-    }
+    },
+    {
+      path: '/temperature-converter',
+      name: 'temperatureConverter',
+      component: () => import('../views/TemperatureConverterView.vue')
+    },
   ]
 })
 
