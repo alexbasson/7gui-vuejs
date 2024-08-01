@@ -11,8 +11,9 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/counter">Counter</RouterLink>
+        <RouterLink to="/temperature-converter">Temperature Converter</RouterLink>
+        <RouterLink to="/flight-booker">Flight Booker</RouterLink>
       </nav>
     </div>
   </header>
@@ -47,9 +48,7 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  display: block;
 }
 
 nav a:first-of-type {

@@ -41,14 +41,14 @@ const onFahrenheitChange = (event: Event): void => {
 </script>
 
 <template>
-  <div class="flex justify-end">
-    <div class="mr-8">
-      <label for="celsius" class="pr-2">celsius:</label>
+  <div class="w-2/3 flex justify-between">
+    <div>
+      <label for="celsius">celsius:</label>
       <input name="celsius" :value="celsius" @input="onCelsiusChange" class="text-black p-2" />
     </div>
 
     <div>
-      <label for="fahrenheit" class="pr-2">fahrenheit:</label>
+      <label for="fahrenheit">fahrenheit:</label>
       <input name="fahrenheit" :value="fahrenheit" @input="onFahrenheitChange" class="text-black p-2" />
     </div>
   </div>
