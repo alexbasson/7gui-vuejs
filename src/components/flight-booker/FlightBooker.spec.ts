@@ -20,7 +20,7 @@ describe('FlightBooker.vue', () => {
   })
 
   describe('on initialization', () => {
-    it('sets the text fields to todays date', () => {
+    it("sets the text fields to today's date", () => {
       const today = new Date()
       const todayString = new DateFormatter().format(today)
       expect(departureInput.element.value).toBe(todayString)

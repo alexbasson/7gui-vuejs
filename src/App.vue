@@ -14,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/counter">Counter</RouterLink>
         <RouterLink to="/temperature-converter">Temperature Converter</RouterLink>
         <RouterLink to="/flight-booker">Flight Booker</RouterLink>
+        <RouterLink to="/timer">Timer</RouterLink>
       </nav>
     </div>
   </header>

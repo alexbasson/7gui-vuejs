@@ -32,6 +32,11 @@ const router = createRouter({
       name: 'flightBooker',
       component: () => import('../views/FlightBookerView.vue')
     },
+    {
+      path: '/timer',
+      name: 'timer',
+      component: () => import('../views/TimerView.vue')
+    },
   ]
 })
 
