@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { type Timer } from './timer'
+
 const props = defineProps<{
   interval: number,
   defaultDuration: number,
   timer: Timer,
 }>()
-
 const {interval, defaultDuration, timer} = props
 
 const duration = ref<number>(defaultDuration)

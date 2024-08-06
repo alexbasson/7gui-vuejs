@@ -37,6 +37,11 @@ const router = createRouter({
       name: 'timer',
       component: () => import('../views/TimerView.vue')
     },
+    {
+      path: '/crud',
+      name: 'crud',
+      component: () => import('../views/CrudView.vue')
+    },
   ]
 })
 
