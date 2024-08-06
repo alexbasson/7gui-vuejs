@@ -5,11 +5,11 @@ import {type Timer} from "@/components/timer/timer";
 
 describe('TheTimer', () => {
   let wrapper: VueWrapper
-  let progressBar: Omit<DOMWrapper<HTMLElement>, 'exists'>
-  let durationLabel: Omit<DOMWrapper<HTMLElement>, 'exists'>
-  let elapsedLabel: Omit<DOMWrapper<HTMLElement>, 'exists'>
-  let durationSlider: Omit<DOMWrapper<HTMLInputElement>, 'exists'>
-  let resetButton: Omit<DOMWrapper<HTMLButtonElement>, 'exists'>
+  let progressBar: DOMWrapper<HTMLElement>
+  let durationLabel: DOMWrapper<HTMLElement>
+  let elapsedLabel: DOMWrapper<HTMLElement>
+  let durationSlider: DOMWrapper<HTMLInputElement>
+  let resetButton: DOMWrapper<HTMLButtonElement>
 
   let mockTimer: MockTimer
 
@@ -27,11 +27,11 @@ describe('TheTimer', () => {
       }
     })
 
-    progressBar = wrapper.get("[id='progress-bar']")
-    durationLabel = wrapper.get("[data-testid='duration']")
-    elapsedLabel = wrapper.get("[data-testid='elapsed-time']")
-    durationSlider = wrapper.get("input[type='range']")
-    resetButton = wrapper.get('button')
+    progressBar = wrapper.find("[id='progress-bar']")
+    durationLabel = wrapper.find("[data-testid='duration']")
+    elapsedLabel = wrapper.find("[data-testid='elapsed-time']")
+    durationSlider = wrapper.find("input[type='range']")
+    resetButton = wrapper.find('button')
   })
 
   describe('upon initialization', () => {

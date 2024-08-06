@@ -5,18 +5,18 @@ import DateFormatter from "@/components/flight-booker/date-formatter";
 
 describe('FlightBooker.vue', () => {
   let wrapper: VueWrapper
-  let dropdown: Omit<DOMWrapper<HTMLSelectElement>, 'exists'>
-  let departureInput: Omit<DOMWrapper<HTMLInputElement>, 'exists'>
-  let returnInput: Omit<DOMWrapper<HTMLInputElement>, 'exists'>
-  let form: Omit<DOMWrapper<HTMLFormElement>, 'exists'>
+  let dropdown: DOMWrapper<HTMLSelectElement>
+  let departureInput: DOMWrapper<HTMLInputElement>
+  let returnInput: DOMWrapper<HTMLInputElement>
+  let form: DOMWrapper<HTMLFormElement>
 
   beforeEach(() => {
     wrapper = mount(FlightBooker)
 
-    form = wrapper.get('form')
-    dropdown = wrapper.get("select")
-    departureInput = wrapper.get("input[name='departure']")
-    returnInput = wrapper.get("input[name='return']")
+    form = wrapper.find('form')
+    dropdown = wrapper.find("select")
+    departureInput = wrapper.find("input[name='departure']")
+    returnInput = wrapper.find("input[name='return']")
   })
 
   describe('on initialization', () => {

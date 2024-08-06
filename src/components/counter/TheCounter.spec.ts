@@ -4,14 +4,14 @@ import TheCounter from './TheCounter.vue'
 
 describe('Counter', () => {
   let wrapper: VueWrapper
-  let counterLabel: Omit<DOMWrapper<Element>, 'exists'>
-  let button: Omit<DOMWrapper<HTMLButtonElement>, 'exists'>
+  let counterLabel: DOMWrapper<Element>
+  let button: DOMWrapper<HTMLButtonElement>
 
   beforeEach(() => {
     wrapper = mount(TheCounter)
 
-    counterLabel = wrapper.get("[data-testid='counter']")
-    button = wrapper.get('button')
+    counterLabel = wrapper.find("[data-testid='counter']")
+    button = wrapper.find('button')
   })
 
   describe('on initialization', () => {

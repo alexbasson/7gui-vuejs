@@ -4,14 +4,14 @@ import TemperatureConverter from './TemperatureConverter.vue'
 
 describe('TemperatureConverter', () => {
   let wrapper: VueWrapper
-  let celsiusField: Omit<DOMWrapper<HTMLInputElement>, 'exists'>
-  let fahrenheitField: Omit<DOMWrapper<HTMLInputElement>, 'exists'>
+  let celsiusField: DOMWrapper<HTMLInputElement>
+  let fahrenheitField: DOMWrapper<HTMLInputElement>
 
   beforeEach(() => {
     wrapper = mount(TemperatureConverter)
 
-    celsiusField = wrapper.get("[name='celsius']")
-    fahrenheitField = wrapper.get("[name='fahrenheit']")
+    celsiusField = wrapper.find("[name='celsius']")
+    fahrenheitField = wrapper.find("[name='fahrenheit']")
   })
 
   describe('when entering a temperature into the celsius field', () => {
