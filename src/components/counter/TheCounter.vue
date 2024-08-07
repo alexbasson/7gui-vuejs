@@ -8,6 +8,6 @@ const counter = ref(0)
   <div class="w-1/6">
     <p data-testid='counter' class="mb-4">count: {{ counter }}</p>
 
-    <button @click="counter++" class="bg-blue-500 text-white w-full px-4 py-2 rounded">Count</button>
+    <button @click="counter++" class="w-full btn">Count</button>
   </div>
 </template>

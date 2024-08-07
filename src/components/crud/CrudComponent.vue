@@ -87,9 +87,9 @@ const personFilter = (person: Person): boolean => {
     </div>
 
     <div class="w-3/5 flex justify-between">
-      <button name="create" @click="handleCreateClicked" class="bg-blue-500 text-white px-4 py-2 rounded">Create</button>
-      <button name="update" @click="handleUpdateClicked" class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
-      <button name="delete" @click="handleDeleteClicked" class="bg-blue-500 text-white px-4 py-2 rounded">Delete</button>
+      <button name="create" @click="handleCreateClicked" class="btn">Create</button>
+      <button name="update" @click="handleUpdateClicked" class="btn">Update</button>
+      <button name="delete" @click="handleDeleteClicked" class="btn">Delete</button>
     </div>
   </div>
 </template>

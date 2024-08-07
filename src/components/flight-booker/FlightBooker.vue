@@ -69,7 +69,7 @@ const handleSubmit = (event: Event) => {
     </div>
 
     <div class="mb-4">
-      <button type="submit" :disabled="!formEnabled" class="w-full bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-400">Submit</button>
+      <button type="submit" :disabled="!formEnabled" class="w-full btn">Submit</button>
     </div>
 
     <div>

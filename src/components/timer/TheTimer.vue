@@ -50,7 +50,7 @@ startTimer()
     </div>
 
     <div>
-      <button @click="elapsedTime = 0" class="w-full bg-blue-500 text-white px-4 py-2 rounded">Reset</button>
+      <button @click="elapsedTime = 0" class="w-full btn">Reset</button>
     </div>
   </div>
 </template>
