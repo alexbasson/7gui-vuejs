@@ -7,7 +7,7 @@ const props = defineProps<{
 }>()
 const {repository} = props
 
-const persons = ref<Person[]>(repository.getAll())
+const persons = ref<Person[]>([])
 const selectedPerson = ref<Person | null>(null)
 const name = ref<string>('')
 const surname = ref<string>('')
@@ -17,32 +17,29 @@ const handlePersonListItemClicked = (person: Person) => {
   selectedPerson.value = person
 }
 
-const handleCreateClicked = (event: Event) => {
-  event.preventDefault()
-
-  repository.createPerson(name.value, surname.value)
+const handleCreateClicked = async () => {
+  await repository.createPerson(name.value, surname.value)
+  persons.value = await repository.getAll()
   name.value = ''
   surname.value = ''
 }
 
-const handleUpdateClicked = (event: Event) => {
-  event.preventDefault()
-
+const handleUpdateClicked = async () => {
   const personToUpdate = selectedPerson.value
   if (!personToUpdate) { return }
 
-  repository.update(personToUpdate, name.value, surname.value)
+  await repository.update(personToUpdate, name.value, surname.value)
+  persons.value = await repository.getAll()
   name.value = ''
   surname.value = ''
 }
 
-const handleDeleteClicked = (event: Event) => {
-  event.preventDefault()
-
+const handleDeleteClicked = async () => {
   const personToDelete = selectedPerson.value
   if (!personToDelete) { return }
 
-  repository.delete(personToDelete)
+  await repository.delete(personToDelete)
+  persons.value = await repository.getAll()
 }
 
 const personFilter = (person: Person): boolean => {

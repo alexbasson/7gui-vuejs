@@ -2,6 +2,7 @@ import { describe, beforeEach, it, expect } from 'vitest'
 import {mount, DOMWrapper, VueWrapper} from "@vue/test-utils";
 import CrudComponent from "@/components/crud/CrudComponent.vue";
 import {PersonsRepository} from "@/components/crud/personsRepository";
+import flushPromises from "flush-promises";
 
 describe('CrudComponent', () => {
   let wrapper: VueWrapper
@@ -90,6 +91,7 @@ describe('CrudComponent', () => {
       await surnameInput.setValue('Beyer')
 
       await updateButton.trigger('click')
+      await flushPromises()
 
       expect(personsElements().length).toBe(3)
       expect(personsElements()[0].text()).toEqual('Alice Awesome')
@@ -113,6 +115,7 @@ describe('CrudComponent', () => {
       await bobListItem.trigger('click')
 
       await deleteButton.trigger('click')
+      await flushPromises()
 
       expect(personsElements().length).toBe(2)
       expect(personsElements()[0].text()).toEqual('Alice Awesome')
@@ -145,6 +148,7 @@ describe('CrudComponent', () => {
     await nameInput.setValue(name)
     await surnameInput.setValue(surname)
     await createButton.trigger('click')
+    await flushPromises()
   }
 
   const listItemForPerson = (fullname: string): DOMWrapper<HTMLLIElement> => {

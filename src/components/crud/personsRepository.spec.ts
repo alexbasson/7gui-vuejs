@@ -8,28 +8,28 @@ describe('PersonsRepository', () => {
     repository = new PersonsRepository()
   })
 
-  it('manages CRUD operations on a collection of persons', () => {
-    expect(repository.getAll()).toEqual([])
+  it('manages CRUD operations on a collection of persons', async () => {
+    expect(await repository.getAll()).toEqual([])
 
-    const alice = repository.createPerson('Alice', 'Awesome')
-    expect(repository.getAll()).toEqual([alice])
+    const alice = await repository.createPerson('Alice', 'Awesome')
+    expect(await repository.getAll()).toEqual([alice])
 
-    const bob = repository.createPerson('Bob', 'Builder')
-    expect(repository.getAll()).toEqual([alice, bob])
+    const bob = await repository.createPerson('Bob', 'Builder')
+    expect(await repository.getAll()).toEqual([alice, bob])
 
-    const clara = repository.createPerson('Clara', 'Creative')
-    expect(repository.getAll()).toEqual([alice, bob, clara])
+    const clara = await repository.createPerson('Clara', 'Creative')
+    expect(await repository.getAll()).toEqual([alice, bob, clara])
 
-    const dan = repository.createPerson('Dan', 'DeMan')
-    expect(repository.getAll()).toEqual([alice, bob, clara, dan])
+    const dan = await repository.createPerson('Dan', 'DeMan')
+    expect(await repository.getAll()).toEqual([alice, bob, clara, dan])
 
-    const carla = repository.update(clara, 'Carla', 'Contemporary')
-    expect(repository.getAll()).toContain(carla)
+    const carla = await repository.update(clara, 'Carla', 'Contemporary')
+    expect(await repository.getAll()).toContain(carla)
     expect(carla.id).toEqual(3)
     expect(carla.name).toEqual('Carla')
     expect(carla.surname).toEqual('Contemporary')
 
     repository.delete(bob)
-    expect(repository.getAll()).toEqual([alice, clara, dan])
+    expect(await repository.getAll()).toEqual([alice, clara, dan])
   })
 })

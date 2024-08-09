@@ -8,30 +8,38 @@ export class PersonsRepository {
   private id: number = 1
   private persons: Person[] = []
 
-  getAll(): Person[] {
-    return this.persons
+  async getAll(): Promise<Person[]> {
+    return new Promise((resolve) => {
+      resolve(this.persons)
+    })
   }
 
-  createPerson(name: string, surname: string): Person {
-    const newPerson: Person = {id: this.id, name, surname}
-    this.persons.push(newPerson)
-    this.id++
-    return newPerson
+  async createPerson(name: string, surname: string): Promise<Person> {
+    return new Promise((resolve) => {
+      const newPerson: Person = {id: this.id, name, surname}
+      this.persons.push(newPerson)
+      this.id++
+      resolve(newPerson)
+    })
   }
 
-  update(person: Person, name: string, surname: string): Person {
-    const personToUpdate = this.persons.find(p => p.id === person.id)
-    if (personToUpdate) {
-      personToUpdate.name = name
-      personToUpdate.surname = surname
-      this.persons.splice(this.indexOf(person), 1, personToUpdate)
-    }
-    return person
+  async update(person: Person, name: string, surname: string): Promise<Person> {
+    return new Promise((resolve) => {
+      const personToUpdate = this.persons.find(p => p.id === person.id)
+      if (personToUpdate) {
+        personToUpdate.name = name
+        personToUpdate.surname = surname
+        this.persons.splice(this.indexOf(person), 1, personToUpdate)
+      }
+      resolve(person)
+    })
   }
 
-  delete(person: Person): boolean {
-    this.persons.splice(this.indexOf(person), 1)
-    return true
+  async delete(person: Person): Promise<void> {
+    return new Promise((resolve) => {
+      this.persons.splice(this.indexOf(person), 1)
+      resolve()
+    })
   }
 
   private indexOf(person: Person): number {
