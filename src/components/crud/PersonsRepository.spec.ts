@@ -1,11 +1,11 @@
 import {describe, beforeEach, it, expect} from 'vitest'
-import {PersonsRepository} from './personsRepository'
+import {LocalPersonsRepository} from './LocalPersonsRepository'
 
 describe('PersonsRepository', () => {
-  let repository: PersonsRepository
+  let repository: LocalPersonsRepository
 
   beforeEach(() => {
-    repository = new PersonsRepository()
+    repository = new LocalPersonsRepository()
   })
 
   it('manages CRUD operations on a collection of persons', async () => {

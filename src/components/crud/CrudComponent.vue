@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import {type Person, PersonsRepository} from './personsRepository'
+import type {Person, PersonsRepository} from "@/components/crud/PersonsRepository";
 
 const props = defineProps<{
   repository: PersonsRepository

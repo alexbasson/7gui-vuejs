@@ -1,10 +1,6 @@
-export type Person = {
-  id: number,
-  name: string,
-  surname: string,
-}
+import type {Person, PersonsRepository} from "@/components/crud/PersonsRepository";
 
-export class PersonsRepository {
+export class LocalPersonsRepository implements PersonsRepository {
   private id: number = 1
   private persons: Person[] = []
 

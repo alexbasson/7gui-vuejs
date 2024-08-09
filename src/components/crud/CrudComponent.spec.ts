@@ -1,7 +1,7 @@
 import { describe, beforeEach, it, expect } from 'vitest'
 import {mount, DOMWrapper, VueWrapper} from "@vue/test-utils";
 import CrudComponent from "@/components/crud/CrudComponent.vue";
-import {PersonsRepository} from "@/components/crud/personsRepository";
+import {LocalPersonsRepository} from "@/components/crud/LocalPersonsRepository";
 import flushPromises from "flush-promises";
 
 describe('CrudComponent', () => {
@@ -17,7 +17,7 @@ describe('CrudComponent', () => {
   beforeEach(() => {
     wrapper = mount(CrudComponent, {
       props: {
-        repository: new PersonsRepository()
+        repository: new LocalPersonsRepository()
       }
     })
 
