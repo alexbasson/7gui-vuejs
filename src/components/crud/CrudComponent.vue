@@ -40,6 +40,7 @@ const handleDeleteClicked = async () => {
 
   await repository.delete(personToDelete)
   persons.value = await repository.getAll()
+  selectedPerson.value = null
 }
 
 const personFilter = (person: Person): boolean => {
