@@ -1,86 +1,26 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import {RouterLink, RouterView, useRoute} from 'vue-router'
+import {computed} from "vue";
+const route = useRoute()
+const path = computed(() => route.path)
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="flex justify-center mt-8">
+    <div class="w-[60rem] mx-auto">
+      <div class="w-[19rem] float-left pr-8">
+        <ul>
+          <li class="nav-link" :class="[path === '/counter' ? 'nav-link-active' : 'nav-link-inactive']"><RouterLink to="/counter">Counter</RouterLink></li>
+          <li class="nav-link" :class="[path === '/temperature-converter' ? 'nav-link-active' : 'nav-link-inactive']"><RouterLink to="/temperature-converter">Temperature Converter</RouterLink></li>
+          <li class="nav-link" :class="[path === '/flight-booker' ? 'nav-link-active' : 'nav-link-inactive']"><RouterLink to="/flight-booker">Flight Booker</RouterLink></li>
+          <li class="nav-link" :class="[path === '/timer' ? 'nav-link-active' : 'nav-link-inactive']"><RouterLink to="/timer">Timer</RouterLink></li>
+          <li class="nav-link" :class="[path === '/crud' ? 'nav-link-active' : 'nav-link-inactive']"><RouterLink to="/crud">CRUD</RouterLink></li>
+        </ul>
+      </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/counter">Counter</RouterLink>
-        <RouterLink to="/temperature-converter">Temperature Converter</RouterLink>
-        <RouterLink to="/flight-booker">Flight Booker</RouterLink>
-        <RouterLink to="/timer">Timer</RouterLink>
-        <RouterLink to="/crud">CRUD</RouterLink>
-      </nav>
+      <div class="w-[41rem] ml-[19rem]">
+        <RouterView/>
+      </div>
     </div>
-  </header>
-
-  <RouterView />
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: block;
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>

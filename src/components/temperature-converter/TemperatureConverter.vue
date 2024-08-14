@@ -41,15 +41,17 @@ const onFahrenheitChange = (event: Event): void => {
 </script>
 
 <template>
-  <div class="w-2/3 flex justify-between">
-    <div>
-      <label for="celsius">celsius:</label>
-      <input name="celsius" :value="celsius" @input="onCelsiusChange" class="text-black p-2" />
-    </div>
+  <div class="card">
+    <div class="flex justify-between align-middle">
+      <div>
+        <label for="celsius" class="mr-4">celsius:</label>
+        <input name="celsius" :value="celsius" @input="onCelsiusChange" class="text-black p-2 rounded" />
+      </div>
 
-    <div>
-      <label for="fahrenheit">fahrenheit:</label>
-      <input name="fahrenheit" :value="fahrenheit" @input="onFahrenheitChange" class="text-black p-2" />
+      <div>
+        <label for="fahrenheit" class="mr-4">fahrenheit:</label>
+        <input name="fahrenheit" :value="fahrenheit" @input="onFahrenheitChange" class="text-black p-2 rounded" />
+      </div>
     </div>
   </div>
 </template>

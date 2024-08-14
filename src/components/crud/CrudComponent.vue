@@ -53,10 +53,10 @@ const personFilter = (person: Person): boolean => {
 </script>
 
 <template>
-  <div class="bg-gray-200 p-4">
+  <div class="card">
     <div class="mb-4">
       <label for="filter" class="text-black mr-4">Filter prefix:</label>
-      <input name="filter" v-model="filter" class="text-black" />
+      <input name="filter" v-model="filter" class="text-black rounded" />
     </div>
 
     <div class="grid grid-cols-2 gap-4">
@@ -74,12 +74,12 @@ const personFilter = (person: Person): boolean => {
       <div>
         <div class="flex justify-end mb-4">
           <label for="name" class="text-black mr-4">name:</label>
-          <input name="name" v-model="name" class="text-black" />
+          <input name="name" v-model="name" class="text-black rounded" />
         </div>
 
         <div class="flex justify-end mb-4">
           <label for="surname" class="text-black mr-4">surname:</label>
-          <input name="surname" v-model="surname" class="text-black" />
+          <input name="surname" v-model="surname" class="text-black rounded" />
         </div>
       </div>
     </div>

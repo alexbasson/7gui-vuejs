@@ -35,7 +35,7 @@ startTimer()
 </script>
 
 <template>
-  <div class="w-1/4">
+  <div class="w-1/2 card">
     <div class="w-full bg-gray-400 h-6 mb-4">
       <div id="progress-bar" class="bg-blue-500 h-6" :style="{width: `${percentComplete()}%`}"></div>
     </div>

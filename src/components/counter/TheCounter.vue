@@ -5,7 +5,7 @@ const counter = ref(0)
 </script>
 
 <template>
-  <div class="w-1/6">
+  <div class="w-1/2 card">
     <p data-testid='counter' class="mb-4">count: {{ counter }}</p>
 
     <button @click="counter++" class="w-full btn">Count</button>

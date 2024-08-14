@@ -50,9 +50,9 @@ const handleSubmit = (event: Event) => {
 </script>
 
 <template>
-  <form @submit="handleSubmit" class="w-2/4">
+  <form @submit="handleSubmit" class="w-2/3 card">
     <div class="mb-4">
-      <select :value="flightType" @change="handleFlightTypeChange" class="w-full text-black p-2">
+      <select :value="flightType" @change="handleFlightTypeChange" class="w-full text-black p-2 rounded">
         <option value="one-way">One way</option>
         <option value="return">Return</option>
       </select>
@@ -60,12 +60,12 @@ const handleSubmit = (event: Event) => {
 
     <div class="flex justify-between mb-4">
       <label for="departure" class="mr-2">departure date:</label>
-      <input name="departure" :value="departureDate" @input="handleDepartureDateChange" class="text-black p-2" :class="[departureDateValid ? 'bg-white' : 'bg-red-500']" />
+      <input name="departure" :value="departureDate" @input="handleDepartureDateChange" class="text-black p-2 rounded" :class="[departureDateValid ? 'bg-white' : 'bg-red-500']" />
     </div>
 
     <div class="flex justify-between mb-4">
       <label for="return" class="mr-2">return date:</label>
-      <input name="return" :value="returnDate" @input="handleReturnDateChange" :disabled="flightType === 'one-way'" class="text-black p-2 disabled:text-gray-400" :class="[returnDateValid ? 'bg-white' : 'bg-red-500']" />
+      <input name="return" :value="returnDate" @input="handleReturnDateChange" :disabled="flightType === 'one-way'" class="text-black p-2 rounded disabled:text-gray-400" :class="[returnDateValid ? 'bg-white' : 'bg-red-500']" />
     </div>
 
     <div class="mb-4">
