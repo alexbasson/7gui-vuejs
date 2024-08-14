@@ -5,8 +5,8 @@ export type Person = {
 }
 
 export interface PersonsRepository {
-  getAll(): Promise<Person[]>;
-  createPerson(name: string, surname: string): Promise<Person>;
-  update(person: Person, name: string, surname: string): Promise<Person>;
-  delete(person: Person): Promise<void>;
+  getAll: () => Promise<Person[]>;
+  create: (name: string, surname: string) => Promise<Person>;
+  update: (person: Person, name: string, surname: string) => Promise<Person>;
+  delete: (person: Person) => Promise<void>;
 }

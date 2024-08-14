@@ -18,7 +18,7 @@ const handlePersonListItemClicked = (person: Person) => {
 }
 
 const handleCreateClicked = async () => {
-  await repository.createPerson(name.value, surname.value)
+  await repository.create(name.value, surname.value)
   persons.value = await repository.getAll()
   name.value = ''
   surname.value = ''

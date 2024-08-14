@@ -11,16 +11,16 @@ describe('PersonsRepository', () => {
   it('manages CRUD operations on a collection of persons', async () => {
     expect(await repository.getAll()).toEqual([])
 
-    const alice = await repository.createPerson('Alice', 'Awesome')
+    const alice = await repository.create('Alice', 'Awesome')
     expect(await repository.getAll()).toEqual([alice])
 
-    const bob = await repository.createPerson('Bob', 'Builder')
+    const bob = await repository.create('Bob', 'Builder')
     expect(await repository.getAll()).toEqual([alice, bob])
 
-    const clara = await repository.createPerson('Clara', 'Creative')
+    const clara = await repository.create('Clara', 'Creative')
     expect(await repository.getAll()).toEqual([alice, bob, clara])
 
-    const dan = await repository.createPerson('Dan', 'DeMan')
+    const dan = await repository.create('Dan', 'DeMan')
     expect(await repository.getAll()).toEqual([alice, bob, clara, dan])
 
     const carla = await repository.update(clara, 'Carla', 'Contemporary')

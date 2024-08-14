@@ -10,7 +10,7 @@ export class LocalPersonsRepository implements PersonsRepository {
     })
   }
 
-  async createPerson(name: string, surname: string): Promise<Person> {
+  async create(name: string, surname: string): Promise<Person> {
     return new Promise((resolve) => {
       const newPerson: Person = {id: this.id, name, surname}
       this.persons.push(newPerson)
