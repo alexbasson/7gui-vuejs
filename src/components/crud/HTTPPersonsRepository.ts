@@ -8,7 +8,7 @@ export default class HTTPPersonsRepository implements PersonsRepository {
     return await response.json();
   }
 
-  async createPerson(name: string, surname: string): Promise<Person> {
+  async create(name: string, surname: string): Promise<Person> {
     const response = await fetch(this.baseUrl, {
       method: "POST",
       headers: {
